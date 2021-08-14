@@ -25,6 +25,8 @@ class ProjectDetailView(DetailView, MultipleObjectMixin):
     template_name = 'projectapp/detail.html'
 
     def get_context_data(self, **kwargs):
+        project = self.object
+        user = self.request.user
         object_list = Article.objects.filter(project= self.get_object())
         return super(ProjectDetailView, self).get_context_data(object_list=object_list, **kwargs)
 

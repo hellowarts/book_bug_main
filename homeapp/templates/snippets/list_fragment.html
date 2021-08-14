@@ -1,4 +1,5 @@
 
+{% load static %}
 {% if article_list %}
 <div class="container">
 
@@ -17,11 +18,7 @@
 </div>
 {% endif %}
 
-<div>
-  <a href="{% url 'articleapp:create' %}">
-    Create
-  </a>
-</div>
+
 
 {% include 'snippets/pagination.html' with page_obj=page_obj %}
 <div style ="text-align:center">
